@@ -74,4 +74,7 @@ async function * tile({x, y, freq}: {x: number, y: number, freq: number}) {
   }
 }
 
-render(tilesMethodTwo(12, 12), document.getElementById("experiment-root") as HTMLElement)
+const WIDTH = 25
+const HEIGHT = 25
+const FREQ_MS = 5000
+render(tilesMethodTwo(WIDTH, HEIGHT, FREQ_MS), document.getElementById("experiment-root") as HTMLElement)
