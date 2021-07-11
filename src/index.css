@@ -1,0 +1,59 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  margin:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: teal; */
+  background-color: black;
+}
+
+#experiment-root {
+  height: 75vmin;
+  width: 75vmin;
+}
+
+.grid {
+  height: 100%;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --alpha: 1;
+  background-color: rgba(100, 220, 175, var(--alpha));
+  /* transition: all 1.2s ease-in-out; */
+}
+
+.grid-two {
+  grid-gap: 0;
+  height: 100%;
+  --grid-height: 0;
+  --grid-width: 0;
+  display: grid;
+  grid-template-rows: repeat(var(--grid-height), 1fr);
+  grid-template-columns: repeat(var(--grid-width), 1fr);
+  /* background-image: url(https://cdn.mos.cms.futurecdn.net/3upZx2gxxLpW7MBbnKYQLH-1200-80.jpg); */
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+} 
+
+.cell-two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --cell-x: 0;
+  --cell-y: 0;
+  --cell-v: 1;
+  grid-column: calc(var(--cell-x) + 1);
+  grid-row: calc(var(--cell-y) + 1);
+  background-color: rgba(100, 220, 175, calc(var(--cell-v) / 8));
+  backdrop-filter: blur(calc(var(--cell-v) * 2px));
+  backdrop-filter: invert(calc(25% * var(--cell-v)));
+  transition: all 0.125s ease-in-out;
+  cursor: pointer;
+}
